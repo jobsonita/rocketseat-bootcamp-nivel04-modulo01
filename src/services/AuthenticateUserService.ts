@@ -14,6 +14,7 @@ interface Request {
 }
 
 interface Response {
+  user: Omit<User, 'password'>
   token: string
 }
 
@@ -33,13 +34,13 @@ export default class AuthenticateUserService {
       throw new AppError('Incorrect credentials')
     }
 
-    const payload = { user: { name: user.name } }
-
-    const token = sign(payload, authConfig.secret, {
+    const token = sign({}, authConfig.secret, {
       subject: user.id,
       expiresIn: authConfig.tokenDuration,
     })
 
-    return { token }
+    const { password: _, ...userWithoutPassword } = user
+
+    return { user: userWithoutPassword, token }
   }
 }

@@ -9,9 +9,9 @@ router.post('/', async (req, res) => {
 
   const authenticateUser = new AuthenticateUserService()
 
-  const { token } = await authenticateUser.execute({ email, password })
+  const { user, token } = await authenticateUser.execute({ email, password })
 
-  return res.json({ token })
+  return res.json({ user, token })
 })
 
 export default router
