@@ -21,6 +21,10 @@ export default class AppointmentsRepository implements IAppointmentsRepository {
     return appointment
   }
 
+  public async list(): Promise<Appointment[]> {
+    return this.ormRepository.find()
+  }
+
   public async findByDate(date: Date): Promise<Appointment | undefined> {
     return this.ormRepository.findOne({ where: { date } })
   }
