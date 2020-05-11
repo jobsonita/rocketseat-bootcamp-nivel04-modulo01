@@ -4,11 +4,11 @@ import 'express-async-errors'
 
 import cors from 'cors'
 
-import './database'
+import '@shared/infra/typeorm'
 
-import { tmpDir } from './config/upload'
+import { tmpDir } from '@config/upload'
 
-import AppError from './errors/AppError'
+import AppError from '@shared/errors/AppError'
 
 import routes from './routes'
 

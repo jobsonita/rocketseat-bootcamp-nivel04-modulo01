@@ -92,3 +92,39 @@ GET 'http://localhost:3333/appointments'
 ## Comandos utilizados na construção do projeto
 
 Caso deseje configurar um projeto seguindo os passos dos commits, listo abaixo os comandos executados nesta terceira parte da configuração. Este projeto utiliza como base a branch nivel03modulo02 de [jobsonita/rocketseat-bootcamp-nivel02-modulo02](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo02).
+
+### Sessão 01
+
+#### Aula 05
+
+Configurar os caminhos dos imports no arquivo tsconfig.json:
+
+```
+"baseUrl": "./src",
+"paths": {
+  "@modules/*": ["modules/*"],
+  "@config/*": ["config/*"],
+  "@shared/*": ["shared/*"],
+},
+```
+
+Atualizar os caminhos das migrations no .env:
+
+```
+TYPEORM_ENTITIES_DIR = src/**/typeorm/entities
+TYPEORM_MIGRATIONS_DIR = src/**/typeorm/migrations
+TYPEORM_ENTITIES = src/**/typeorm/entities/*.ts
+TYPEORM_MIGRATIONS = src/**/typeorm/migrations/*.ts
+```
+
+Configurar a lib que irá tratar os caminhos definidos acima
+
+```
+yarn add tsconfig-paths -D
+```
+
+Alterar os scripts dev:server e start do package.json adicionando o argumento:
+
+```
+-r tsconfig-paths/register
+```
