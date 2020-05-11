@@ -1,3 +1,5 @@
+import { injectable, inject } from 'tsyringe'
+
 import { hash } from 'bcryptjs'
 
 import User from '@modules/users/infra/typeorm/entities/User'
@@ -12,16 +14,18 @@ interface IRequest {
   password: string
 }
 
-type IResponse = Omit<User, 'password'>
-
+@injectable()
 export default class CreateUserService {
-  constructor(private usersRepository: IUsersRepository) {}
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository
+  ) {}
 
   public async execute({
     name,
     email,
     password,
-  }: IRequest): Promise<IResponse> {
+  }: IRequest): Promise<Omit<User, 'password'>> {
     const userWithSameEmailExists = await this.usersRepository.findByEmail(
       email
     )

@@ -139,3 +139,28 @@ TYPEORM_MIGRATIONS_DIR = src/shared/infra/typeorm/migrations
 TYPEORM_ENTITIES = src/modules/*/infra/typeorm/entities/*.ts
 TYPEORM_MIGRATIONS = src/shared/infra/typeorm/migrations/*.ts
 ```
+
+#### Aula 10
+
+```
+yarn add tsyringe
+```
+
+Para evitar que o eslint reclame sobre `no-useless-constructor`, adicionar a linha abaixo às regras no eslintrc:
+
+```
+"no-useless-constructor": "off",
+```
+
+ou reescrever o código de um modo mais verboso:
+
+```
+  private appointmentsRepository: IAppointmentsRepository
+
+  constructor(
+    @inject('AppointmentsRepository')
+    appointmentsRepository: IAppointmentsRepository
+  ) {
+    this.appointmentsRepository = appointmentsRepository
+  }
+```

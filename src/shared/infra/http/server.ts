@@ -4,6 +4,7 @@ import 'express-async-errors'
 
 import cors from 'cors'
 
+import '@shared/container'
 import '@shared/infra/typeorm'
 
 import { tmpDir } from '@config/upload'

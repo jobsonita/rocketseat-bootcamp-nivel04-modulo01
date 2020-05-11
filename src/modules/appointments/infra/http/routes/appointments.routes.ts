@@ -1,7 +1,7 @@
-import { parseISO } from 'date-fns'
 import { Router } from 'express'
+import { container } from 'tsyringe'
 
-import AppointmentsRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentsRepository'
+import { parseISO } from 'date-fns'
 
 import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService'
 
@@ -22,8 +22,7 @@ router.post('/', async (req, res) => {
 
   const parsedDate = parseISO(date)
 
-  const appointmentsRepository = new AppointmentsRepository()
-  const createAppointment = new CreateAppointmentService(appointmentsRepository)
+  const createAppointment = container.resolve(CreateAppointmentService)
 
   const appointment = await createAppointment.execute({
     provider_id,
