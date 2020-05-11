@@ -1,23 +1,30 @@
-import { getRepository } from 'typeorm'
 import { hash } from 'bcryptjs'
 
 import User from '@modules/users/infra/typeorm/entities/User'
 
 import AppError from '@shared/errors/AppError'
 
-interface Request {
+import IUsersRepository from '../repositories/IUsersRepository'
+
+interface IRequest {
   name: string
   email: string
   password: string
 }
 
-export default class CreateUserService {
-  public async execute({ name, email, password }: Request): Promise<User> {
-    const usersRepository = getRepository(User)
+type IResponse = Omit<User, 'password'>
 
-    const userWithSameEmailExists = await usersRepository.findOne({
-      where: { email },
-    })
+export default class CreateUserService {
+  constructor(private usersRepository: IUsersRepository) {}
+
+  public async execute({
+    name,
+    email,
+    password,
+  }: IRequest): Promise<IResponse> {
+    const userWithSameEmailExists = await this.usersRepository.findByEmail(
+      email
+    )
 
     if (userWithSameEmailExists) {
       throw new AppError("There's another user registered with that e-mail")
@@ -25,14 +32,14 @@ export default class CreateUserService {
 
     const hashedPassword = await hash(password, 8)
 
-    const user = usersRepository.create({
+    const user = await this.usersRepository.create({
       name,
       email,
       password: hashedPassword,
     })
 
-    await usersRepository.save(user)
+    const { password: _, ...userWithoutPassword } = user
 
-    return user
+    return userWithoutPassword
   }
 }

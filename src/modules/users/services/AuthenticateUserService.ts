@@ -1,5 +1,4 @@
 import { compare } from 'bcryptjs'
-import { getRepository } from 'typeorm'
 import { sign } from 'jsonwebtoken'
 
 import authConfig from '@config/auth'
@@ -8,21 +7,23 @@ import User from '@modules/users/infra/typeorm/entities/User'
 
 import AppError from '@shared/errors/AppError'
 
-interface Request {
+import IUsersRepository from '../repositories/IUsersRepository'
+
+interface IRequest {
   email: string
   password: string
 }
 
-interface Response {
+interface IResponse {
   user: Omit<User, 'password'>
   token: string
 }
 
 export default class AuthenticateUserService {
-  public async execute({ email, password }: Request): Promise<Response> {
-    const usersRepository = getRepository(User)
+  constructor(private usersRepository: IUsersRepository) {}
 
-    const user = await usersRepository.findOne({ where: { email } })
+  public async execute({ email, password }: IRequest): Promise<IResponse> {
+    const user = await this.usersRepository.findByEmail(email)
 
     if (!user) {
       throw new AppError('Incorrect credentials')

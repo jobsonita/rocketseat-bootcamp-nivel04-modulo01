@@ -108,7 +108,7 @@ Configurar os caminhos dos imports no arquivo tsconfig.json:
 },
 ```
 
-Atualizar os caminhos das migrations no .env:
+Atualizar os caminhos de migrations e entities no .env:
 
 ```
 TYPEORM_ENTITIES_DIR = src/**/typeorm/entities
@@ -127,4 +127,15 @@ Alterar os scripts dev:server e start do package.json adicionando o argumento:
 
 ```
 -r tsconfig-paths/register
+```
+
+#### Aula 09
+
+Alterei os caminhos de migrations e entities para ser um pouco mais específico:
+
+```
+TYPEORM_ENTITIES_DIR = src/modules/*/infra/typeorm/entities
+TYPEORM_MIGRATIONS_DIR = src/shared/infra/typeorm/migrations
+TYPEORM_ENTITIES = src/modules/*/infra/typeorm/entities/*.ts
+TYPEORM_MIGRATIONS = src/shared/infra/typeorm/migrations/*.ts
 ```
