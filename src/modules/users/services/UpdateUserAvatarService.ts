@@ -5,9 +5,9 @@ import path from 'path'
 
 import { tmpDir } from '@config/upload'
 
-import User from '@modules/users/infra/typeorm/entities/User'
-
 import AppError from '@shared/errors/AppError'
+
+import User from '../infra/typeorm/entities/User'
 
 import IUsersRepository from '../repositories/IUsersRepository'
 

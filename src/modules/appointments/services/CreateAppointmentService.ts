@@ -2,9 +2,9 @@ import { injectable, inject } from 'tsyringe'
 
 import { startOfHour } from 'date-fns'
 
-import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment'
-
 import AppError from '@shared/errors/AppError'
+
+import Appointment from '../infra/typeorm/entities/Appointment'
 
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository'
 

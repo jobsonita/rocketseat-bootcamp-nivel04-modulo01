@@ -1,6 +1,6 @@
 import { injectable, inject } from 'tsyringe'
 
-import Appointment from '@modules/appointments/infra/typeorm/entities/Appointment'
+import Appointment from '../infra/typeorm/entities/Appointment'
 
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository'
 
