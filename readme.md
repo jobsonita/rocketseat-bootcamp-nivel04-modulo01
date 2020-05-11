@@ -1,20 +1,18 @@
-<p align="center"><img alt="Logotipo do Projeto" title="Back-end em Node" src=".github/logo.svg" width="200px" /></p>
+<p align="center"><img alt="Logotipo do Projeto" title="GoBarber" src=".github/logo.svg" width="400px" /></p>
 
-# Back-end em NodeJS
+# GoBarber Back-end
 
 <p align="center">Autor: Jobson Gilberto Barros Amorim &lt;jobsonita@gmail.com&gt;</p>
 
 Baseado nas aulas do curso [GoStack](https://rocketseat.com.br/gostack) (turma 11) da Rocketseat.
 
-<p align="center"><img alt="Quickstep Guide" title="Quicksteps" src=".github/quicksteps.gif" width="600px" /></p>
-
 ## Sobre este projeto
 
-Este projeto demonstra as configurações básicas de um back-end em NodeJS usando as bibliotecas express, typescript e typeorm.
+Este projeto demonstra a aplicação dos princípios de DDD e TDD em um back-end em NodeJS. Neste projeto, é utilizada a biblioteca jest.
 
-Este repositório contém a segunda parte das configurações do projeto. A primeira parte pode ser encontrada em [jobsonita/rocketseat-bootcamp-nivel02-modulo01](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo01).
+Este repositório continua o desenvolvimento do back-end iniciado em [jobsonita/rocketseat-bootcamp-nivel02-modulo01](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo01) e continuado em [jobsonita/rocketseat-bootcamp-nivel02-modulo02](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo02).
 
-Para maiores detalhes sobre o passo-a-passo da configuração do projeto, utilize a seção "Comandos utilizados na construção do projeto" deste readme em conjunto com o detalhamento dos [commits](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo02/commits/master) deste repositório.
+Para maiores detalhes sobre o passo-a-passo da configuração do projeto, utilize a seção "Comandos utilizados na construção do projeto" deste readme em conjunto com o detalhamento dos [commits](https://github.com/jobsonita/rocketseat-bootcamp-nivel04-modulo01/commits/master) deste repositório.
 
 Este projeto pode ser usado em conjunto com o front-end disponibilizado em [jobsonita/rocketseat-bootcamp-nivel03-modulo02](https://github.com/jobsonita/rocketseat-bootcamp-nivel03-modulo02).
 
@@ -93,122 +91,4 @@ GET 'http://localhost:3333/appointments'
 
 ## Comandos utilizados na construção do projeto
 
-Caso deseje criar um projeto do zero seguindo os passos dos commits, listo abaixo os comandos executados nesta segunda parte da configuração. Certifique-se de executar antes os passos do [projeto base](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo01) ou cloná-lo para usá-lo como base.
-
-### Sessão 01
-
-#### Aula 04
-
-```
-yarn add typeorm pg
-```
-
-#### Aula 05
-
-```
-yarn typeorm migration:create -n CreateAppointments
-yarn typeorm migration:run
-yarn typeorm migration:show
-yarn typeorm migration:revert
-yarn typeorm migration:run
-```
-
-#### Aula 06
-
-Usei [definite assignment assertion](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#definite-assignment-assertions) para não ser forçado a desativar a regra strictPropertyInitialization do typescript.
-
-#### Aula 07
-
-```
-yarn add reflect-metadata
-```
-
-Devido a alterações na migration, é necessário recriar as tabelas:
-
-```
-yarn typeorm migration:revert
-yarn typeorm migration:run
-```
-
-### Sessão 02
-
-#### Aula 01
-
-```
-yarn typeorm migration:create -n CreateUsers
-yarn typeorm entity:create -n User
-```
-
-Devido a alterações na migration de Appointments, é necessário recriar as tabelas:
-
-```
-yarn typeorm migration:revert
-yarn typeorm migration:run
-```
-
-#### Aula 02
-
-```
-yarn typeorm migration:create -n AlterProviderFieldToProviderId
-```
-
-Devido a alterações nas migrations de Appointments e de Users, é necessário recriar as tabelas:
-
-```
-yarn typeorm migration:revert
-yarn typeorm migration:revert
-yarn typeorm migration:run
-```
-
-#### Aula 04
-
-```
-yarn add bcryptjs
-yarn add @types/bcryptjs -D
-```
-
-### Sessão 03
-
-#### Aula 03
-
-```
-yarn add jsonwebtoken
-yarn add @types/jsonwebtoken -D
-```
-
-### Sessão 04
-
-#### Aula 01
-
-```
-yarn typeorm migration:create -n AddAvatarFieldToUsers
-yarn typeorm migration:run
-yarn add multer
-yarn add @types/multer -D
-```
-
-### Sessão 05
-
-#### Aula 02
-
-```
-yarn add express-async-errors
-```
-
-## branch nivel03modulo02
-
-### Sessão 02
-
-#### Aula 01
-
-```
-yarn add cors
-yarn add @types/cors -D
-```
-
-### Sessão 04
-
-#### Aula 02
-
-Retornando dados do usuário logado ao criar a sessão.
-Estes dados serão usados no front-end.
+Caso deseje configurar um projeto seguindo os passos dos commits, listo abaixo os comandos executados nesta terceira parte da configuração. Este projeto utiliza como base a branch nivel03modulo02 do [projeto](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo02).
