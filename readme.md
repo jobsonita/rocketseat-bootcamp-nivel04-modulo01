@@ -91,4 +91,4 @@ GET 'http://localhost:3333/appointments'
 
 ## Comandos utilizados na construção do projeto
 
-Caso deseje configurar um projeto seguindo os passos dos commits, listo abaixo os comandos executados nesta terceira parte da configuração. Este projeto utiliza como base a branch nivel03modulo02 do [projeto](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo02).
+Caso deseje configurar um projeto seguindo os passos dos commits, listo abaixo os comandos executados nesta terceira parte da configuração. Este projeto utiliza como base a branch nivel03modulo02 de [jobsonita/rocketseat-bootcamp-nivel02-modulo02](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo02).
