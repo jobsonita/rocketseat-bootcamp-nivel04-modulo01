@@ -3,6 +3,7 @@ import multer from 'multer'
 import path from 'path'
 
 export const tmpDir = path.resolve(__dirname, '..', '..', 'tmp')
+export const uploadsDir = path.resolve(tmpDir, 'uploads')
 
 export default {
   storage: multer.diskStorage({
