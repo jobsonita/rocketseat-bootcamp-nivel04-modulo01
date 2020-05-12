@@ -28,6 +28,7 @@ Este projeto pode ser usado em conjunto com o front-end disponibilizado em [jobs
 - typeorm (com PostgreSQL, biblioteca pg)
 - jsonwebtoken (autenticação)
 - multer (configurado para armazenamento local)
+- tsyringe (injeção de dependências)
 - [VS Code](https://code.visualstudio.com) (editor de código preferido)
 - Docker (gerenciador de contêiners)
 - Contêiner postgres (através do Docker)
