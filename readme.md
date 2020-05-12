@@ -93,6 +93,16 @@ Utilize uma ferramenta como o Insomnia para fazer requisições nas rotas descri
 GET 'http://localhost:3333/appointments'
 ```
 
+## Testes e análise de cobertura
+
+Após a instalação das bibliotecas, com um terminal aberto na raiz do projeto, execute:
+
+```
+yarn test
+```
+
+Após a conclusão dos testes, será gerada uma pasta `coverage` na raiz do projeto. Um relatório bem formatado pode ser visto em `coverage/lcov-report/index.html`.
+
 ## Comandos utilizados na construção do projeto
 
 Caso deseje configurar um projeto seguindo os passos dos commits, listo abaixo os comandos executados nesta terceira parte da configuração. Este projeto utiliza como base a branch nivel03modulo02 de [jobsonita/rocketseat-bootcamp-nivel02-modulo02](https://github.com/jobsonita/rocketseat-bootcamp-nivel02-modulo02).
@@ -205,6 +215,12 @@ Compatibilidade com typescript e tipagem:
 ```
 yarn add ts-jest -D
 yarn add @types/jest -D
+```
+
+Execução dos testes:
+
+```
+yarn test
 ```
 
 #### Aula 04
