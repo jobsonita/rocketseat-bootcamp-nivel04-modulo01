@@ -1,4 +1,4 @@
-import ApiError from '@shared/errors/AppError'
+import AppError from '@shared/errors/AppError'
 
 import FakeHashProvider from '../providers/HashProvider/fakes/FakeHashProvider'
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository'
@@ -47,6 +47,6 @@ describe('CreateUser', () => {
         email,
         password: '123456',
       })
-    ).rejects.toBeInstanceOf(ApiError)
+    ).rejects.toBeInstanceOf(AppError)
   })
 })
