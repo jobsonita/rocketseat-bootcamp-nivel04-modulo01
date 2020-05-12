@@ -29,6 +29,7 @@ Este projeto pode ser usado em conjunto com o front-end disponibilizado em [jobs
 - jsonwebtoken (autenticação)
 - multer (configurado para armazenamento local)
 - tsyringe (injeção de dependências)
+- jest (testes automatizados)
 - [VS Code](https://code.visualstudio.com) (editor de código preferido)
 - Docker (gerenciador de contêiners)
 - Contêiner postgres (através do Docker)
@@ -164,4 +165,42 @@ ou reescrever o código de um modo mais verboso:
   ) {
     this.appointmentsRepository = appointmentsRepository
   }
+```
+
+### Sessão 02
+
+#### Aula 02
+
+```
+yarn add jest -D
+```
+Se durante os testes o ts-jest avisar sobre incompatibilidade com a versão do jest, execute:
+
+```
+yarn remove jest -D
+yarn add jest@<26.0.0 -D
+```
+
+Configurações do jest:
+
+```
+yarn jest --init
+```
+
+```
+? Would you like to use Jest when running "test" script in "package.json"
+> y
+? Choose the test environment that will be used for testing
+> node
+? Do you want Jest to add coverage reports?
+> n
+? Automatically clear mock calls and instances between every test?
+> y
+```
+
+Compatibilidade com typescript e tipagem:
+
+```
+yarn add ts-jest -D
+yarn add @types/jest -D
 ```
