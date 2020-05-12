@@ -6,6 +6,8 @@
 
 Baseado nas aulas do curso [GoStack](https://rocketseat.com.br/gostack) (turma 11) da Rocketseat.
 
+<p align="center"><img alt="Cobertura dos testes" title="Cobertura dos testes" src=".github/coverage.png" width="800px" /></p>
+
 ## Sobre este projeto
 
 Este projeto demonstra a aplicação dos princípios de DDD e TDD em um back-end em NodeJS. Neste projeto, é utilizada a biblioteca jest.
