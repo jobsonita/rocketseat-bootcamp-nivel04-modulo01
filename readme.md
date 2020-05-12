@@ -69,10 +69,10 @@ TYPEORM_USERNAME = postgres
 TYPEORM_PASSWORD = your_password
 TYPEORM_DATABASE = gobarber
 TYPEORM_LOGGING = true
-TYPEORM_ENTITIES_DIR = src/models
-TYPEORM_MIGRATIONS_DIR = src/database/migrations
-TYPEORM_ENTITIES = src/models/*.ts
-TYPEORM_MIGRATIONS = src/database/migrations/*.ts
+TYPEORM_ENTITIES_DIR = src/modules/*/infra/typeorm/entities
+TYPEORM_MIGRATIONS_DIR = src/shared/infra/typeorm/migrations
+TYPEORM_ENTITIES = src/modules/*/infra/typeorm/entities/*.ts
+TYPEORM_MIGRATIONS = src/shared/infra/typeorm/migrations/*.ts
 ```
 
 Com o terminal aberto na raiz do projeto, execute a migração das tabelas:
