@@ -204,3 +204,7 @@ Compatibilidade com typescript e tipagem:
 yarn add ts-jest -D
 yarn add @types/jest -D
 ```
+
+#### Aula 04
+
+Configurar `moduleNameMapper` no arquivo jest.config.js para utilizar os caminhos dos imports do arquivo tsconfig.json
